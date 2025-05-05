@@ -27,6 +27,7 @@
 		"@astrojs/svelte": "^7.0.13",
 		"@tailwindcss/vite": "^4.1.5",
 		"astro": "^5.7.10",
+		"mode-watcher": "^1.0.6",
 		"svelte": "^5.28.2",
 		"tailwindcss": "^4.1.5",
 		"typescript": "^5.8.3"
