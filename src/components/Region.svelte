@@ -30,12 +30,14 @@
 	<ul class="overflow-hidden space-y-1.5">
 		{#each bosses as boss}
 			{@const bossName = typeof boss === "string" ? boss : boss.name}
+			{@const key = `${region}:${bossName}`}
 
 			<li class="flex gap-x-2 items-center last:pb-6">
 				<input
 					class="size-4 hover:cursor-pointer accent-primary"
 					type="checkbox"
-					value="{region}:{bossName}"
+					checked={checked.has(key)}
+					value={key}
 					onchange={(event) => {
 						const key = event.currentTarget.value;
 

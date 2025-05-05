@@ -1,6 +1,19 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import { checked, regions } from "../data";
 	import Region from "./Region.svelte";
+
+	onMount(() => {
+		const stored: string[] = JSON.parse(localStorage.getItem("checked") ?? "[]");
+
+		for (const key of stored) {
+			checked.add(key);
+		}
+	});
+
+	$effect(() => {
+		localStorage.setItem("checked", JSON.stringify(Array.from(checked)));
+	});
 </script>
 
 <h1 class="py-10 text-center text-3xl">
